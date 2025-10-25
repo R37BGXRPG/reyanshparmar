@@ -11,20 +11,15 @@
     <title>Reyansh Parmar | Gallery</title>
     <script>
         // Mirror scroll behavior from index.html so gallery cards animate in/out
-        document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
             const cards = document.querySelectorAll('.image-card');
             let lastScrollY = window.scrollY;
 
             window.addEventListener('scroll', function () {
                 const currentScrollY = window.scrollY;
 
-                if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                    // Scrolling down - slide out visible cards
-                    cards.forEach(c => {
-                        c.classList.remove('slide-in-left');
-                        c.classList.add('slide-out-left');
-                    });
-                } else if (currentScrollY < lastScrollY) {
+                // Only animate cards in when scrolling up. Do not animate out on scroll down.
+                if (currentScrollY < lastScrollY) {
                     // Scrolling up - slide in cards
                     cards.forEach(c => {
                         c.classList.remove('slide-out-left');
@@ -61,7 +56,9 @@
                     <p>- edited by me | the first edit</p>
                 </div>
             </article>
-
+        </section>
+        <br>
+<section class="image-grid">
             <article class="image-card slide-in-left">
                 <img src="chevimapalafinal.png" alt="Chevrolet Impala">
                 <div class="caption">
@@ -121,5 +118,6 @@
 </body>
 
 </html>
+
 
 
