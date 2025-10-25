@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Pixelated | Gallery</title>
+    <script>
+        // Mirror scroll behavior from index.html so gallery cards animate in/out
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.image-card');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', function () {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    // Scrolling down - slide out visible cards
+                    cards.forEach(c => {
+                        c.classList.remove('slide-in-left');
+                        c.classList.add('slide-out-left');
+                    });
+                } else if (currentScrollY < lastScrollY) {
+                    // Scrolling up - slide in cards
+                    cards.forEach(c => {
+                        c.classList.remove('slide-out-left');
+                        c.classList.add('slide-in-left');
+                    });
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1 class="tracking-in-contract-bck">Pixelated</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="image-grid">
+            <!-- Example image cards. Replace src with actual image paths. -->
+            <article class="image-card slide-in-left">
+                <img src="images/" alt="Sample 1">
+                <div class="caption">
+                    <h3>BMW M3 GTR E46 NFS EDITION</h3>
+                    <p>- edited by @37bgxrpg</p>
+                </div>
+            </article>
+
+            <article class="image-card slide-in-left">
+                <img src="images/" alt="Sample 2">
+                <div class="caption">
+                    <h3>Sample 2</h3>
+                    <p>Short description or details about this image. Use this box to add notes.</p>
+                </div>
+            </article>
+
+            <article class="image-card slide-in-left">
+                <img src="images/" alt="Sample 3">
+                <div class="caption">
+                    <h3>Sample 3</h3>
+                    <p>Short description or details about this image. Use this box to add notes.</p>
+                </div>
+            </article>
+
+            <article class="image-card slide-in-left">
+                <img src="images/" alt="Sample 4">
+                <div class="caption">
+                    <h3>Sample 4</h3>
+                    <p>Short description or details about this image. Use this box to add notes.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

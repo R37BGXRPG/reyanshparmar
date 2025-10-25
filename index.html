@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Pixelated | Index</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const detailsBox = document.querySelector('.details-box');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', function () {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    // Scrolling down
+                    detailsBox.classList.remove('slide-in-left');
+                    detailsBox.classList.add('slide-out-left');
+                } else if (currentScrollY < lastScrollY) {
+                    // Scrolling up
+                    detailsBox.classList.remove('slide-out-left');
+                    detailsBox.classList.add('slide-in-left');
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <main>
+        <h1 class="tracking-in-contract-bck">Pixelated</h1>
+        <div class="details-box slide-in-left">
+            <h2>Why do we exist?</h2>
+            <div class="content">
+                <p>We are here to edit your favourite photos with <span
+                        class="tracking-in-contract-bck accent-2">HUMAN</span> creativity and no AI creativity.</p>
+            </div>
+        </div>
+        <div class="details-box slide-in-left">
+            <h2>Pricing</h2>
+            <div class="content">
+                <p>Invest in your brand’s success with <span class="accent">CREATIVE</span> designs that stand out and
+                    connect.<br>
+                    Our pricing is
+                    designed to be <span class="accent">fair, simple, and focused on your growth.</span><br><br>
+
+                    <span class="accent-warm">$10 for 2 custom designs
+                        (ads, posters, or digital art)</span>
+                    Mix and match any type to fit your needs
+                    Bulk and custom packages available for ambitious projects
+                    Let’s make your vision a reality. Get in touch today!
+
+                    Trusted by creators and brands for quality, reliability, and fast turnaround.
+                </p>
+            </div>
+        </div>
+        <div class="details-box slide-in-left">
+            <h2>Well then what are you waiting for?</h2>
+            <div class="content">
+                <p>Want some proof go to <a href="gallery.html" class="accent""><b>GALLERY</b></a>
+                <br>
+                Ready to get started? <a href="contact.html" class="accent-2"><b>CONTACT</b></a> us now!
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
